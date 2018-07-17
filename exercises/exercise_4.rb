@@ -37,7 +37,7 @@ s6.save
   puts "Name: #{store.name}, Annual Revenue: #{store.annual_revenue}."
 end
 
-@womens_apparel = Store.select(:name, :annual_revenue).where(womens_apparel: true, annual_revenue: < 1000000)
+@womens_apparel = Store.select(:name, :annual_revenue).where("womens_apparel = ? AND annual_revenue < ?", true, 1000000)
 
 @womens_apparel.each do |store|
   store.name
